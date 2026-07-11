@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopy — সহজ কেনাকাটা, নির্ভরযোগ্য সার্ভিস</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ================= হেডার ================= -->
+<header class="site-header">
+  <div class="container header-top">
+    <a href="index.html" class="logo">Shopy <span>সহজ কেনাকাটা</span></a>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="প্রোডাক্ট খুঁজুন — যেমন: শাল, মধু, ইয়ারবাডস...">
+      <button aria-label="খুঁজুন">🔍</button>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="cartBtn" aria-label="কার্ট">
+        <svg viewBox="0 0 24 24"><path d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="9" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="20" r="1.4" fill="currentColor" stroke="none"/></svg>
+        কার্ট
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+  <div class="container">
+    <nav class="category-nav" id="categoryNav"></nav>
+  </div>
+</header>
+<div class="rickshaw-divider"></div>
+
+<!-- ================= হিরো ================= -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <span class="hero-eyebrow">বাংলাদেশের ঘরে ঘরে</span>
+      <h1 class="hero-title">আপনার পছন্দের জিনিস, <em>দরজায় পৌঁছে যাক</em></h1>
+      <p class="hero-sub">দেশীয় পণ্য থেকে দৈনন্দিন প্রয়োজন — সবকিছু এক জায়গায়। ক্যাশ অন ডেলিভারি ও দ্রুত ডেলিভারি সুবিধা সহ।</p>
+      <a href="#products" class="btn">কেনাকাটা শুরু করুন ↓</a>
+    </div>
+    <div class="hero-art" aria-hidden="true"></div>
+  </div>
+</section>
+<div class="rickshaw-divider flip"></div>
+
+<!-- ================= প্রোডাক্ট ================= -->
+<section class="section container" id="products">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">সব প্রোডাক্ট</span>
+      <h2>আপনার জন্য বাছাইকৃত</h2>
+    </div>
+  </div>
+  <div class="product-grid" id="productGrid">
+    <div class="empty-state" style="grid-column:1/-1"><div class="big">⏳</div><p>প্রোডাক্ট লোড হচ্ছে...</p></div>
+  </div>
+</section>
+
+<!-- ================= ফুটার ================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <h4>Shopy</h4>
+      <p>বাংলাদেশের মানুষের জন্য একটি সহজ, নির্ভরযোগ্য অনলাইন শপিং প্ল্যাটফর্ম।</p>
+    </div>
+    <div class="footer-col">
+      <h4>সহায়তা</h4>
+      <a href="#">ডেলিভারি নীতি</a>
+      <a href="#">রিটার্ন ও রিফান্ড</a>
+      <a href="#">যোগাযোগ করুন</a>
+    </div>
+    <div class="footer-col">
+      <h4>যোগাযোগ</h4>
+      <p>📞 ০১৭XXXXXXXX</p>
+      <p>✉️ support@shopy.com.bd</p>
+      <a href="admin.html">অ্যাডমিন লগইন →</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">© ২০২৬ Shopy. সর্বস্বত্ব সংরক্ষিত।</div>
+</footer>
+
+<!-- ================= কার্ট ড্রয়ার ================= -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="cartDrawer">
+  <div class="drawer-head">
+    <h3>🛒 আপনার কার্ট</h3>
+    <button class="drawer-close" id="drawerClose" aria-label="বন্ধ করুন">×</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot">
+    <div id="cartTotal"></div>
+    <button class="btn" style="width:100%;justify-content:center" id="checkoutBtn" disabled>চেকআউট করুন</button>
+  </div>
+</aside>
+
+<!-- ================= প্রোডাক্ট মোডাল ================= -->
+<div class="modal" id="productModal">
+  <div class="modal-box wide">
+    <button class="modal-close" data-close-modal>×</button>
+    <div id="productModalBody"></div>
+  </div>
+</div>
+
+<!-- ================= চেকআউট মোডাল ================= -->
+<div class="modal" id="checkoutModal">
+  <div class="modal-box">
+    <button class="modal-close" data-close-modal>×</button>
+    <div style="padding:28px;">
+      <h2 style="margin-bottom:4px;">অর্ডার সম্পন্ন করুন</h2>
+      <p style="color:var(--ink-soft);margin-bottom:20px;">মোট: <strong id="checkoutTotal" style="color:var(--teal)"></strong></p>
+      <form id="checkoutForm">
+        <div class="form-group">
+          <label for="name">আপনার নাম *</label>
+          <input type="text" id="name" name="name" required placeholder="যেমন: করিম উদ্দিন">
+        </div>
+        <div class="form-group">
+          <label for="phone">মোবাইল নম্বর *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="01XXXXXXXXX" pattern="[0-9]{11}">
+        </div>
+        <div class="form-group">
+          <label for="address">সম্পূর্ণ ঠিকানা *</label>
+          <textarea id="address" name="address" rows="3" required placeholder="বাসা/হোল্ডিং, রাস্তা, থানা, জেলা"></textarea>
+        </div>
+        <div class="form-group">
+          <label>পেমেন্ট মাধ্যম *</label>
+          <div class="radio-group">
+            <label class="radio-opt"><input type="radio" name="payment" value="cod" checked> ক্যাশ অন ডেলিভারি</label>
+            <label class="radio-opt"><input type="radio" name="payment" value="bkash"> বিকাশ</label>
+          </div>
+        </div>
+        <button type="submit" class="btn" style="width:100%;justify-content:center;margin-top:8px;">অর্ডার নিশ্চিত করুন</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
