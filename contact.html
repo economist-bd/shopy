@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>যোগাযোগ করুন — Shopy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ================= হেডার ================= -->
+<header class="site-header">
+  <div class="container header-top">
+    <a href="index.html" class="logo">Shopy <span>সহজ কেনাকাটা</span></a>
+    <div class="search-bar">
+      <input type="text" placeholder="প্রোডাক্ট খুঁজুন...">
+      <button aria-label="খুঁজুন">🔍</button>
+    </div>
+    <div class="header-actions">
+      <a href="index.html" class="icon-btn" aria-label="হোম">
+        <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+        হোম
+      </a>
+    </div>
+  </div>
+</header>
+<div class="rickshaw-divider"></div>
+
+<!-- ================= পেজ হিরো ================= -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">হোম</a> / যোগাযোগ করুন</div>
+    <h1>📞 যোগাযোগ করুন</h1>
+    <p>প্রশ্ন, অভিযোগ বা পরামর্শ — যেকোনো কিছুর জন্য আমরা আছি আপনার পাশে।</p>
+  </div>
+</section>
+
+<!-- ================= কন্টেন্ট ================= -->
+<section class="section container">
+  <div class="contact-grid">
+
+    <!-- ---- যোগাযোগের তথ্য ---- -->
+    <div class="contact-info">
+      <div class="contact-card">
+        <div class="ico">📞</div>
+        <div>
+          <h4>হটলাইন</h4>
+          <a href="tel:+8801700000000">০১৭XXXXXXXX</a>
+          <p>প্রতিদিন সকাল ৯টা – রাত ১০টা</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="ico">✉️</div>
+        <div>
+          <h4>ইমেইল</h4>
+          <a href="mailto:support@shopy.com.bd">support@shopy.com.bd</a>
+          <p>সাধারণত ২৪ ঘণ্টার মধ্যে উত্তর দেওয়া হয়</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="ico">💬</div>
+        <div>
+          <h4>হোয়াটসঅ্যাপ</h4>
+          <a href="https://wa.me/8801700000000" target="_blank" rel="noopener">চ্যাট শুরু করুন →</a>
+          <p>দ্রুততম উত্তরের জন্য সেরা মাধ্যম</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="ico">📍</div>
+        <div>
+          <h4>ঠিকানা</h4>
+          <p>বাড়ি #XX, রোড #X, ধানমন্ডি, ঢাকা-১২০৫, বাংলাদেশ</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- যোগাযোগ ফর্ম ---- -->
+    <div class="contact-form-box">
+      <h3>আমাদের একটি বার্তা পাঠান</h3>
+      <p class="sub">ফর্মটি পূরণ করুন — আমরা যত দ্রুত সম্ভব আপনার সাথে যোগাযোগ করব।</p>
+
+      <div class="form-success" id="formSuccess">✅ আপনার বার্তা সফলভাবে পাঠানো হয়েছে। ধন্যবাদ!</div>
+
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="cName">আপনার নাম *</label>
+          <input type="text" id="cName" required placeholder="যেমন: করিম উদ্দিন">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cPhone">মোবাইল নম্বর *</label>
+            <input type="tel" id="cPhone" required placeholder="01XXXXXXXXX" pattern="[0-9]{11}">
+          </div>
+          <div class="form-group">
+            <label for="cEmail">ইমেইল (ঐচ্ছিক)</label>
+            <input type="email" id="cEmail" placeholder="you@example.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cSubject">বিষয়</label>
+          <select id="cSubject">
+            <option value="general">সাধারণ জিজ্ঞাসা</option>
+            <option value="order">অর্ডার সংক্রান্ত</option>
+            <option value="return">রিটার্ন/রিফান্ড</option>
+            <option value="complaint">অভিযোগ</option>
+            <option value="partnership">ব্যবসায়িক প্রস্তাব</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cMessage">আপনার বার্তা *</label>
+          <textarea id="cMessage" rows="4" required placeholder="আপনার প্রশ্ন বা মন্তব্য বিস্তারিত লিখুন..."></textarea>
+        </div>
+        <button type="submit" class="btn" style="width:100%;justify-content:center;">বার্তা পাঠান</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ---- ম্যাপ (ঐচ্ছিক) ---- -->
+<section class="container" style="padding-bottom:44px;">
+  <div style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);">
+    <iframe
+      src="https://www.google.com/maps?q=Dhanmondi,Dhaka&output=embed"
+      width="100%" height="320" style="border:0;display:block;" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade" title="Shopy লোকেশন">
+    </iframe>
+  </div>
+</section>
+
+<!-- ================= ফুটার ================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <h4>Shopy</h4>
+      <p>বাংলাদেশের মানুষের জন্য একটি সহজ, নির্ভরযোগ্য অনলাইন শপিং প্ল্যাটফর্ম।</p>
+    </div>
+    <div class="footer-col">
+      <h4>সহায়তা</h4>
+      <a href="delivery-policy.html">ডেলিভারি নীতি</a>
+      <a href="return-refund.html">রিটার্ন ও রিফান্ড</a>
+      <a href="contact.html">যোগাযোগ করুন</a>
+    </div>
+    <div class="footer-col">
+      <h4>যোগাযোগ</h4>
+      <p>📞 ০১৭XXXXXXXX</p>
+      <p>✉️ support@shopy.com.bd</p>
+      <a href="admin.html">অ্যাডমিন লগইন →</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">© ২০২৬ Shopy. সর্বস্বত্ব সংরক্ষিত।</div>
+</footer>
+
+<a href="https://wa.me/8801700000000" target="_blank" rel="noopener" class="whatsapp-float" aria-label="হোয়াটসঅ্যাপে যোগাযোগ">💬</a>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  const btn = e.target.querySelector("button[type=submit]");
+  const successBox = document.getElementById("formSuccess");
+  const data = {
+    name: document.getElementById("cName").value.trim(),
+    phone: document.getElementById("cPhone").value.trim(),
+    email: document.getElementById("cEmail").value.trim(),
+    subject: document.getElementById("cSubject").value,
+    message: document.getElementById("cMessage").value.trim(),
+    status: "unread",
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  };
+  btn.disabled = true;
+  btn.textContent = "পাঠানো হচ্ছে...";
+  try{
+    await db.collection("messages").add(data);
+    successBox.classList.add("show");
+    e.target.reset();
+    setTimeout(()=>successBox.classList.remove("show"), 5000);
+  }catch(err){
+    alert("বার্তা পাঠাতে সমস্যা হয়েছে, আবার চেষ্টা করুন। (" + err.message + ")");
+  }finally{
+    btn.disabled = false;
+    btn.textContent = "বার্তা পাঠান";
+  }
+});
+</script>
+</body>
+</html>
